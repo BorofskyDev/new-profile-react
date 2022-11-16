@@ -5,7 +5,7 @@ import Me from '../../../public/images/me1.jpg'
 export default function Main() {
   return (
     <header className='Main'>
-      <h2 className='Main__title'>Joel Borofsky</h2>
+      <h1 className='Main__title'>Joel Borofsky</h1>
       <img
         src={Me}
         alt='Joel Borofsky with a white cap on staring at the camera'

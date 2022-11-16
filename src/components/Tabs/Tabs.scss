@@ -1,0 +1,60 @@
+@use '../../index.scss';
+
+.Tabs {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.85em 0.55em;
+    margin: 0;
+    font-size: 1.25rem;
+    background-color: hsla(var(--clr-light) / 0.8);
+    color: hsl(var(--clr-secondary) / 0.7);
+    border: 1px solid hsla(var(--clr-light) / 0.5);
+    box-shadow: 0 0 0.1875em 0.0625em rgba(0, 0, 0, 0.8) inset,
+      0 0 0.0625em 0.0625em rgba(0, 0, 0, 0.9);
+    transition: all 500ms ease-in-out;
+
+    &:first-child {
+      border-radius: 0.625em 0 0 0.625em;
+    }
+
+    &:last-child {
+      border-radius: 0 0.625em 0.625em 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--clr-accent));
+    }
+
+    &.active {
+      background-color: hsl(var(--clr-light) / 0.4);
+      color: hsl(var(--clr-primary));
+      box-shadow: 0 0 0.375em 0.1875em rgba(0, 0, 0, 0.6) inset,
+        0 0 0.0625em 0.0625em rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.TabContent {
+  padding: 0 1em;
+  text-align: center;
+  transition: all 500ms ease-in-out;
+}
