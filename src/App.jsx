@@ -14,12 +14,14 @@ function App() {
     <div className='canvas-container'>
       <div className='Card'>
         <div className='Card__container'>
-          <Main />
-          <Stack />
-          <About />
-          <Link />
-          <Projects />
-          <Contact />
+          <Main className='Card__container--main' />
+          <div className='Card__container--content'>
+            <Stack />
+            <About />
+            <Link />
+            <Projects />
+            <Contact />
+          </div>
         </div>
       </div>
       <Canvas>
