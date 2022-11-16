@@ -1,1 +1,33 @@
 @use '../../index.scss';
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+
+  &__title {
+    // text-shadow: 0 0 0.25em hsl(var(--clr-primary));
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    font-family: var(--ff-heading);
+    text-align: center;
+    // font-size: 1.9rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 9em;
+    margin: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 0.375em 0.125em hsl(var(--clr-primary) / 0.15),
+      0 0 2em hsl(var(--clr-secondary) / 0.3),
+      0 0 10em hsl(var(--clr-accent) / 0.2);
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+  }
+}
