@@ -5,18 +5,28 @@ import Stack from './pages/Stack/Stack'
 import Link from './pages/Links/Link'
 import Projects from './pages/Projects/Projects'
 import Contact from './pages/Contact/Contact'
+import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
+import Earth from './pages/Earth/Earth'
 
 function App() {
-  
-
   return (
-    <div >
-    <Main />
-    <Stack />
-    <About />
-    <Link />
-    <Projects />
-    <Contact />
+    <div className='canvas-container'>
+      <div className='Card'>
+        <div className='Card__container'>
+          <Main />
+          <Stack />
+          <About />
+          <Link />
+          <Projects />
+          <Contact />
+        </div>
+      </div>
+      <Canvas>
+        <Suspense fallback={null}>
+          <Earth />
+        </Suspense>
+      </Canvas>
     </div>
   )
 }

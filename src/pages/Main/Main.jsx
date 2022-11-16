@@ -2,6 +2,6 @@ import './Main.scss'
 
 export default function Main() {
   return (
-    <div>Main</div>
+    <div className="Main">Main</div>
   )
 }
