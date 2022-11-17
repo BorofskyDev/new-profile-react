@@ -79,6 +79,7 @@
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.0625em;
+    overflow: hidden;
     @media (min-width: 55em) {
       &{
         margin: 1em;
