@@ -11,14 +11,15 @@ export default function Stack() {
     setToggleStack(!toggleStack)
   }
 
+
   return (
-    <ul className='Stack'>
+    <ul className={toggleStack ? 'menu active' : 'menu'}>
       {/* <h3 className='Stack__title'>My Stack</h3>
       <p className='Stack__description'>
         Frontend focused, these are my primary languages/technologies, but not
         the only ones I work in. Feel free to reach out to find out more.{' '}
       </p> */}
-      <div className='Stack__toggle active' onClick={handleToggle}>
+      <div className='toggle' onClick={handleToggle}>
         <GiGalaxy className='Stack__plus' />
         <div className='sr-only'>Menu</div>
       </div>
