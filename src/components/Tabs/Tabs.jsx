@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import {
   BsFillHddStackFill,
   BsPersonCircle,
@@ -17,46 +18,60 @@ export default function Tabs() {
     <nav className='Tabs'>
       <div className='sr-only'>Navigation</div>
       <ul className='Tabs__nav'>
-        <TabNavItem
-          className='Tabs__tab'
-          title={<BsFillHddStackFill />}
-          id='stack'
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-        <div className='sr-only'>Stack</div>
-        <TabNavItem
-          className='Tabs__tab'
-          title={<BsPersonCircle />}
-          id='about'
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-        <div className='sr-only'>about</div>
-        <TabNavItem
-          className='Tabs__tab'
-          title={<BsLink />}
-          id='links'
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-        <div className='sr-only'>Social Media Links</div>
-        <div className='sr-only'>Projects</div>
-        <TabNavItem
-          className='Tabs__tab'
-          title={<BsBriefcaseFill />}
-          id='projects'
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-        <div className='sr-only'>Contact</div>
-        <TabNavItem
-          className='Tabs__tab'
-          title={<BsEnvelope />}
-          id='contact'
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
+        <Link to='/'>
+          <TabNavItem
+            title={<BsFillHddStackFill />}
+            id='stack'
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          >
+            <div className='sr-only'>Stack</div>
+          </TabNavItem>
+        </Link>
+
+        <Link className='Tabs__link' to='/about'>
+          <TabNavItem
+            title={<BsPersonCircle />}
+            id='about'
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          >
+            <div className='sr-only'>about</div>
+          </TabNavItem>
+        </Link>
+
+        <Link className='Tabs__link' to='/link'>
+          <TabNavItem
+            title={<BsLink />}
+            id='links'
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          >
+            <div className='sr-only'>Social Media Links</div>
+          </TabNavItem>
+        </Link>
+
+        <Link className='Tabs__link' to='/projects'>
+          <TabNavItem
+            title={<BsBriefcaseFill />}
+            id='projects'
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          >
+            <div className='sr-only'>Projects</div>
+          </TabNavItem>
+        </Link>
+
+        <Link className='Tabs__link' to='/contact'>
+          <TabNavItem
+            title={<BsEnvelope />}
+            id='contact'
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          >
+            <div className='sr-only'>Contact</div>
+          </TabNavItem>
+        </Link>
       </ul>
     </nav>
   )
