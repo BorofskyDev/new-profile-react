@@ -14,8 +14,10 @@ function App() {
     <div className='canvas-container'>
       <div className='Card'>
         <div className='Card__container'>
-          <Main className='Card__container--main' />
-          <div className='Card__container--content'>
+          <div className='Card__header'>
+            <Main />
+          </div>
+          <div className='Card__main'>
             <Stack />
             <About />
             <Link />

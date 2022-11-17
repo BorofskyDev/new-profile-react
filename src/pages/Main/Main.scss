@@ -1,13 +1,27 @@
 @use '../../index.scss';
 
 .Main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'title'
+    'container';
+  place-items: center;
   padding: 1em 0;
 
+  @media (min-width: 55em) {
+    & {
+      grid-template-areas:
+        'title container';
+        gap: 2em;
+       
+    }
+  }
+
   &__title {
+    grid-area: title;
     margin: 0 0.5em;
     text-transform: uppercase;
     letter-spacing: 0.125em;
@@ -15,23 +29,43 @@
     text-align: center;
     // font-size: 1.9rem;
     overflow: hidden;
+
+    @media (min-width: 55em) {
+      & {
+        transform-origin: top ;
+        // right: 10%;
+        top: 0;
+        transform: rotate(-90deg) translateY(-10%);
+      }
+    }
   }
 
   &__container {
+    grid-area: container;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
 
-  &__section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @media (min-width: 55em) {
+      &{
+        display: grid;
+        place-content: center;
+        grid-template-areas: 
+        'img'
+        'subtitle'
+        'tagline'
+        ' tabs';
+        align-items: center;
+        justify-content: center;
+        margin-left: 5em;
+      }
+    }
   }
 
   &__img {
+    
+    grid-area: img;
     width: 9em;
     margin: 1em;
     border-radius: 10px;
@@ -41,9 +75,18 @@
   }
 
   &__subtitle {
+    grid-area: subtitle;
     text-transform: uppercase;
     letter-spacing: 0.0625em;
+    @media (min-width: 55em) {
+      &{
+        margin: 1em;
+      }
+    }
+  }
+
+  &__tagline {
+    grid-area: tagline;
+    margin: 1em;
   }
 }
-
-

@@ -63,7 +63,12 @@ h3 {
     justify-content: center;
     z-index: 100;
 
+
     &__container {
+      display: grid;
+      grid-template-areas:
+        '. header header .'
+        'main main main main';
       margin: 3em auto;
       height: 100vh;
       background-color: #363d42;
@@ -74,28 +79,38 @@ h3 {
       -webkit-backdrop-filter: blur(0.5625em);
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-  }
-}
 
-@media (min-width: 55em) {
-  .Card {
-    margin: auto;
-
-    &__container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1em;
-
-      &--main {
-        width: 40%;
-        background-color: blue;
-      }
-      &--content {
-        width: 60%;
+      @media (min-width: 55em){
+        &{
+          grid-template-areas: 
+          'header . main main'
+          'header . main main'
+          'header . main main'
+          'header . main main';
+        }
       }
     }
+
+    &__header {
+      grid-area: header;
+      
+      @media (min-width: 55em){
+        &{
+          width: 30%;
+        }
+      }
+
+    }
+
+    &__main {
+      grid-area: main;
+      @media (min-width: 55em) {
+        &{
+          width: 70%;
+        }
+      }
+    }
   }
+
 }
+
